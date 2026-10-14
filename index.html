@@ -7,22 +7,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <div class="glow" id="glow"></div>
+  <div class="sky">
+    <div class="stars"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <div class="cloud c4"></div>
+  </div>
+  <div id="gadgets"></div>
   <div class="progress" id="progress"></div>
+  <div class="toast" id="toast">🔔 Ting ting!</div>
 
   <nav>
-    <span class="logo">IJN<span>.</span></span>
+    <span class="logo"><span class="mini-bell"></span>IJN</span>
     <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
-      <button id="theme" aria-label="Toggle theme">🌙</button>
+      <button id="theme" aria-label="Toggle day and night">🌙</button>
     </div>
   </nav>
 
   <header class="hero">
+    <div class="collar" id="bellBtn" title="Click me!">
+      <span class="bell"></span>
+    </div>
     <p class="hi">👋 Hello, I'm</p>
     <h1>Israt Jerin Nafisa</h1>
     <h2><span id="typing"></span><span class="cursor">|</span></h2>
@@ -57,11 +68,11 @@
   <section id="skills" class="reveal">
     <h3>Skills</h3>
     <div class="bars">
-      <div class="bar"><label>Python</label><div class="track"><i data-w="85"></i></div></div>
-      <div class="bar"><label>Java</label><div class="track"><i data-w="70"></i></div></div>
-      <div class="bar"><label>HTML / CSS</label><div class="track"><i data-w="80"></i></div></div>
-      <div class="bar"><label>PHP</label><div class="track"><i data-w="65"></i></div></div>
-      <div class="bar"><label>Data Analytics</label><div class="track"><i data-w="75"></i></div></div>
+      <div class="bar"><label>🐍 Python</label><div class="track"><i data-w="85"></i></div></div>
+      <div class="bar"><label>☕ Java</label><div class="track"><i data-w="70"></i></div></div>
+      <div class="bar"><label>🎨 HTML / CSS</label><div class="track"><i data-w="80"></i></div></div>
+      <div class="bar"><label>🐘 PHP</label><div class="track"><i data-w="65"></i></div></div>
+      <div class="bar"><label>📊 Data Analytics</label><div class="track"><i data-w="75"></i></div></div>
     </div>
     <div class="chips">
       <span>🎓 Coursera Courses</span>
@@ -102,12 +113,33 @@
     </div>
   </section>
 
+  <section id="certificates" class="reveal">
+    <h3>Certificates</h3>
+    <div class="grid">
+      <div class="card tilt">
+        <div class="icon">🎓</div>
+        <h4>Coursera Certificate 1</h4>
+        <p>Course name ekhane likhbi.</p>
+        <div class="tags"><span>Coursera</span></div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/WC6JXXJ4BHVJ" target="_blank" rel="noopener noreferrer">Verify certificate →</a>
+        <a class="second" href="https://www.coursera.org/api/certificate.v1/pdf/WC6JXXJ4BHVJ" target="_blank" rel="noopener noreferrer">Download PDF ↓</a>
+      </div>
+      <div class="card tilt">
+        <div class="icon">🎓</div>
+        <h4>Coursera Certificate 2</h4>
+        <p>Course name ekhane likhbi.</p>
+        <div class="tags"><span>Coursera</span></div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/7E4432NROUWP" target="_blank" rel="noopener noreferrer">Verify certificate →</a>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="reveal">
     <h3>Let's Connect</h3>
     <p class="center">Open for internships, projects and collaboration.</p>
     <div class="contact-links">
-      <a href="mailto:YOUR-EMAIL@gmail.com">✉️ Email</a>
-      <button id="copy" data-email="YOUR-EMAIL@gmail.com">📋 Copy email</button>
+      <a href="mailto:nafijerin455@gmail.com">✉️ Email</a>
+      <button id="copy" data-email="nafijerin455@gmail.com">📋 Copy email</button>
       <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
       <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
       <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank" rel="noopener noreferrer">🏆 HackerRank</a>
@@ -115,7 +147,7 @@
   </section>
 
   <footer>© 2026 Israt Jerin Nafisa</footer>
-  <button id="top" aria-label="Back to top">↑</button>
+  <button id="top" aria-label="Back to top">🚁</button>
 
   <script>
     // Typing effect
@@ -131,13 +163,6 @@
       else { del = false; w = (w + 1) % words.length; }
       setTimeout(type, del ? 40 : 80);
     })();
-
-    // Cursor glow
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
 
     // Progress bar + back to top
     const bar = document.getElementById('progress');
@@ -170,4 +195,58 @@
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y *
+        card.style.transform = `perspective(700px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => card.style.transform = '');
+    });
+
+    // Project filter
+    document.querySelectorAll('.filters button').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('#projects .card').forEach(card => {
+          card.style.display = (btn.dataset.f === 'all' || card.dataset.cat === btn.dataset.f) ? '' : 'none';
+        });
+      };
+    });
+
+    // Copy email
+    const copy = document.getElementById('copy');
+    copy.onclick = () => {
+      navigator.clipboard.writeText(copy.dataset.email);
+      copy.textContent = '✅ Copied!';
+      setTimeout(() => copy.textContent = '📋 Copy email', 1800);
+    };
+
+    // Day / Night toggle
+    const themeBtn = document.getElementById('theme');
+    themeBtn.onclick = () => {
+      const night = document.body.classList.toggle('night');
+      themeBtn.textContent = night ? '☀️' : '🌙';
+    };
+
+    // Bell click
+    const toast = document.getElementById('toast');
+    const bellBtn = document.getElementById('bellBtn');
+    bellBtn.onclick = () => {
+      bellBtn.classList.remove('ring'); void bellBtn.offsetWidth; bellBtn.classList.add('ring');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1400);
+    };
+
+    // Floating gadgets
+    const icons = ['🚁', '🥞', '🚪', '🔔', '⭐', '☁️'];
+    const box = document.getElementById('gadgets');
+    for (let i = 0; i < 14; i++) {
+      const s = document.createElement('span');
+      s.textContent = icons[i % icons.length];
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.fontSize = (18 + Math.random() * 22) + 'px';
+      s.style.animationDuration = (14 + Math.random() * 16) + 's';
+      s.style.animationDelay = (-Math.random() * 20) + 's';
+      box.appendChild(s);
+    }
+  </script>
+</body>
+</html>
