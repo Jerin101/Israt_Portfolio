@@ -7,91 +7,84 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="sky">
-    <div class="stars"></div>
-    <div class="cloud c1"></div>
-    <div class="cloud c2"></div>
-    <div class="cloud c3"></div>
-    <div class="cloud c4"></div>
-  </div>
-  <div id="field"></div>
+  <canvas id="space"></canvas>
+  <div class="nebula n1"></div>
+  <div class="nebula n2"></div>
   <div class="progress" id="progress"></div>
   <div class="toast" id="toast"></div>
 
-  <!-- GAME HUD -->
-  <div class="hud">
-    <div class="hud-item"><span>LV</span><b id="lvl">1</b></div>
-    <div class="xp"><i id="xpBar"></i><small id="xpText">0 / 100 XP</small></div>
-    <div class="hud-item">🔔 <b id="coins">0</b>/10</div>
-    <div class="hud-item">🏆 <b id="ach">0</b>/6</div>
-  </div>
-
   <nav>
-    <span class="logo"><span class="mini-bell"></span>IJN</span>
+    <span class="logo">&lt;IJN<span>/</span>&gt;</span>
     <div class="links">
-      <a href="#about">Player</a>
-      <a href="#skills">Stats</a>
-      <a href="#projects">Quests</a>
-      <a href="#certificates">Badges</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
-      <button id="theme" aria-label="Toggle day and night">🌙</button>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="collar" id="bellBtn" title="Click me!">
-      <span class="bell"></span>
+    <div class="hero-text">
+      <p class="mono tag">// SYSTEM ONLINE</p>
+      <h1>Israt Jerin Nafisa</h1>
+      <p class="terminal"><span class="prompt">&gt;</span> <span id="typing"></span><span class="cursor">▍</span></p>
+      <p class="sub">4th year Software Engineering @ Daffodil International University · Major in Data Science</p>
+      <div class="cta">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank" rel="noopener noreferrer">HackerRank</a>
+      </div>
     </div>
-    <p class="hi">🎮 PLAYER ONE</p>
-    <h1>Israt Jerin Nafisa</h1>
-    <h2><span id="typing"></span><span class="cursor">|</span></h2>
-    <p class="sub">4th year Software Engineering @ Daffodil International University</p>
-    <div class="cta">
-      <a class="btn" href="#projects">▶ Start Quests</a>
-      <a class="btn ghost" href="#contact">Contact me</a>
-    </div>
-    <p class="hint">💡 Tip: floating 🔔 bells collect kor. 10 ta pele secret unlock hobe!</p>
-    <div class="socials">
-      <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank" rel="noopener noreferrer">HackerRank</a>
+    <div class="orbit-wrap" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="ring r1"><span class="planet p1"></span></div>
+      <div class="ring r2"><span class="planet p2"></span></div>
+      <div class="ring r3"><span class="planet p3"></span></div>
     </div>
   </header>
 
-  <section id="about" class="reveal" data-xp="20">
-    <h3>Player Profile</h3>
-    <div class="about-box">
+  <section id="about" class="reveal">
+    <h3><span class="mono">MISSION 01</span> About Me</h3>
+    <div class="panel">
       <p>
         I'm a 4th year Software Engineering student at Daffodil International University,
         majoring in <b>Data Science</b>. I love turning data into insights and building
         AI-powered applications. I keep learning through projects and online courses.
       </p>
       <div class="stats">
-        <div><b data-count="3">0</b><span>Quests</span></div>
+        <div><b data-count="3">0</b><span>Projects</span></div>
         <div><b data-count="5">0</b><span>Languages</span></div>
-        <div><b data-count="2">0</b><span>Badges</span></div>
+        <div><b data-count="2">0</b><span>Certificates</span></div>
+        <div><b data-count="4">0</b><span>Year Student</span></div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="reveal" data-xp="20">
-    <h3>Character Stats</h3>
+  <section id="skills" class="reveal">
+    <h3><span class="mono">MISSION 02</span> Tech Stack</h3>
     <div class="bars">
-      <div class="bar"><label>🐍 Python</label><div class="track"><i data-w="85"></i></div></div>
-      <div class="bar"><label>☕ Java</label><div class="track"><i data-w="70"></i></div></div>
-      <div class="bar"><label>🎨 HTML / CSS</label><div class="track"><i data-w="80"></i></div></div>
-      <div class="bar"><label>🐘 PHP</label><div class="track"><i data-w="65"></i></div></div>
-      <div class="bar"><label>📊 Data Analytics</label><div class="track"><i data-w="75"></i></div></div>
+      <div class="bar"><label>Python</label><div class="track"><i data-w="85"></i></div></div>
+      <div class="bar"><label>Java</label><div class="track"><i data-w="70"></i></div></div>
+      <div class="bar"><label>HTML / CSS</label><div class="track"><i data-w="80"></i></div></div>
+      <div class="bar"><label>PHP</label><div class="track"><i data-w="65"></i></div></div>
+      <div class="bar"><label>Data Analytics</label><div class="track"><i data-w="75"></i></div></div>
     </div>
     <div class="chips">
-      <span>🚁 Propeller Hat: Fast Learner</span>
-      <span>🚪 Magic Door: Data Science</span>
-      <span>🧠 Brain Gadget: Machine Learning</span>
+      <span>Data Science</span>
+      <span>Machine Learning</span>
+      <span>Data Visualization</span>
+      <span>Git &amp; GitHub</span>
+      <span>Coursera Certified</span>
     </div>
   </section>
 
-  <section id="projects" class="reveal" data-xp="20">
-    <h3>Quests</h3>
+  <section id="projects" class="reveal">
+    <h3><span class="mono">MISSION 03</span> Projects</h3>
     <div class="filters">
       <button class="active" data-f="all">All</button>
       <button data-f="data">Data</button>
@@ -99,40 +92,37 @@
       <button data-f="ai">AI</button>
     </div>
     <div class="grid">
-      <div class="card tilt quest" data-cat="data">
-        <span class="ribbon">QUEST 1</span>
+      <div class="card tilt" data-cat="data">
+        <span class="badge">DATA</span>
         <div class="icon">🦟</div>
         <h4>Dengue Analysis in Bangladesh</h4>
         <p>Data analytics project exploring division-wise dengue trends in Bangladesh.</p>
         <div class="tags"><span>Python</span><span>Data Analytics</span></div>
         <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-        <div class="clear">✔ QUEST CLEARED +30 XP</div>
       </div>
-      <div class="card tilt quest" data-cat="ai">
-        <span class="ribbon">QUEST 2</span>
+      <div class="card tilt" data-cat="ai">
+        <span class="badge">AI</span>
         <div class="icon">👗</div>
         <h4>AI Fit Studio</h4>
         <p>Virtual try-on application for clothing.</p>
         <div class="tags"><span>AI</span><span>Python</span></div>
-        <div class="clear">✔ QUEST CLEARED +30 XP</div>
       </div>
-      <div class="card tilt quest" data-cat="web">
-        <span class="ribbon">QUEST 3</span>
+      <div class="card tilt" data-cat="web">
+        <span class="badge">WEB</span>
         <div class="icon">📚</div>
         <h4>Library Management System</h4>
         <p>Web-based library system built with HTML, CSS and PHP.</p>
         <div class="tags"><span>HTML</span><span>CSS</span><span>PHP</span></div>
         <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-        <div class="clear">✔ QUEST CLEARED +30 XP</div>
       </div>
     </div>
   </section>
 
-  <section id="certificates" class="reveal" data-xp="20">
-    <h3>Badges Earned</h3>
+  <section id="certificates" class="reveal">
+    <h3><span class="mono">MISSION 04</span> Certificates</h3>
     <div class="grid">
       <div class="card tilt">
-        <span class="ribbon gold">BADGE</span>
+        <span class="badge gold">COURSERA</span>
         <div class="icon">🎓</div>
         <h4>AI Fundamentals</h4>
         <p>Coursera course certificate.</p>
@@ -141,7 +131,7 @@
         <a class="second" href="https://www.coursera.org/api/certificate.v1/pdf/WC6JXXJ4BHVJ" target="_blank" rel="noopener noreferrer">Download PDF ↓</a>
       </div>
       <div class="card tilt">
-        <span class="ribbon gold">BADGE</span>
+        <span class="badge gold">COURSERA</span>
         <div class="icon">💡</div>
         <h4>AI for Brainstorming</h4>
         <p>Coursera course certificate.</p>
@@ -151,9 +141,9 @@
     </div>
   </section>
 
-  <section id="contact" class="reveal" data-xp="20">
-    <h3>Final Level: Let's Connect</h3>
-    <p class="center">Open for internships, projects and collaboration.</p>
+  <section id="contact" class="reveal">
+    <h3><span class="mono">MISSION 05</span> Contact</h3>
+    <p class="center">Open for internships, projects and collaboration. Send a transmission 📡</p>
     <div class="contact-links">
       <a href="mailto:nafijerin455@gmail.com">✉️ Email</a>
       <button id="copy" data-email="nafijerin455@gmail.com">📋 Copy email</button>
@@ -163,62 +153,36 @@
     </div>
   </section>
 
-  <footer>© 2026 Israt Jerin Nafisa · GAME OVER? Press ↑ ↑ ↓ ↓ 😉</footer>
-  <button id="top" aria-label="Back to top">🚁</button>
+  <footer class="mono">© 2026 Israt Jerin Nafisa · built with HTML, CSS &amp; JS</footer>
+  <button id="top" aria-label="Back to top">🚀</button>
 
   <script>
-    // ---------- typing ----------
-    const words = ["Software Engineering Student", "Data Science Enthusiast", "Problem Solver"];
+    // ---------- terminal typing ----------
+    const lines = ["whoami → Software Engineering Student", "major → Data Science", "focus → Data Analytics & AI", "status → open to opportunities"];
     let w = 0, c = 0, del = false;
     const el = document.getElementById('typing');
     (function type() {
-      const word = words[w];
+      const word = lines[w];
       el.textContent = word.substring(0, c);
       if (!del && c < word.length) c++;
       else if (del && c > 0) c--;
-      else if (!del && c === word.length) { del = true; return setTimeout(type, 1200); }
-      else { del = false; w = (w + 1) % words.length; }
-      setTimeout(type, del ? 40 : 80);
+      else if (!del && c === word.length) { del = true; return setTimeout(type, 1500); }
+      else { del = false; w = (w + 1) % lines.length; }
+      setTimeout(type, del ? 25 : 60);
     })();
 
-    // ---------- game state ----------
-    let xp = 0, level = 1, coins = 0, unlocked = new Set();
-    const need = () => level * 100;
-    const $ = id => document.getElementById(id);
-    const toast = $('toast');
-    let tt;
-    function say(msg) {
-      toast.textContent = msg; toast.classList.add('show');
-      clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 1900);
-    }
-    function render() {
-      $('lvl').textContent = level;
-      $('coins').textContent = coins;
-      $('ach').textContent = unlocked.size;
-      $('xpBar').style.width = Math.min(100, xp / need() * 100) + '%';
-      $('xpText').textContent = xp + ' / ' + need() + ' XP';
-    }
-    function addXP(n) {
-      xp += n;
-      while (xp >= need()) { xp -= need(); level++; say('⭐ LEVEL UP! Level ' + level); }
-      render();
-    }
-    function achieve(key, text) {
-      if (unlocked.has(key)) return;
-      unlocked.add(key); render();
-      say('🏆 Achievement: ' + text); addXP(25);
-    }
-
-    // ---------- scroll: progress, back to top, XP per section ----------
-    const bar = $('progress'), topBtn = $('top');
+    // ---------- progress + back to top ----------
+    const bar = document.getElementById('progress'), topBtn = document.getElementById('top');
+    let speedBoost = 0, lastY = scrollY;
     addEventListener('scroll', () => {
       const h = document.documentElement;
       bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
       topBtn.classList.toggle('show', h.scrollTop > 400);
+      speedBoost = Math.min(12, Math.abs(scrollY - lastY) * 0.4); lastY = scrollY;
     });
     topBtn.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 
-    const seen = new Set();
+    // ---------- reveal + counters + skill bars ----------
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (!e.isIntersecting) return;
@@ -228,13 +192,9 @@
           const id = setInterval(() => { n.textContent = ++i; if (i >= t) clearInterval(id); }, 250);
         });
         e.target.querySelectorAll('[data-w]').forEach(b => b.style.width = b.dataset.w + '%');
-        if (e.target.dataset.xp && !seen.has(e.target.id)) {
-          seen.add(e.target.id); addXP(+e.target.dataset.xp);
-          if (seen.size === 5) achieve('explorer', 'Explorer (visited all sections)');
-        }
         io.unobserve(e.target);
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(x => io.observe(x));
 
     // ---------- tilt ----------
@@ -246,18 +206,6 @@
         card.style.transform = `perspective(700px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-6px)`;
       });
       card.addEventListener('mouseleave', () => card.style.transform = '');
-    });
-
-    // ---------- quests ----------
-    const cleared = new Set();
-    document.querySelectorAll('.quest').forEach((q, i) => {
-      q.addEventListener('click', e => {
-        if (e.target.tagName === 'A') return;
-        if (cleared.has(i)) return;
-        cleared.add(i); q.classList.add('done'); addXP(30);
-        say('🗡️ Quest ' + (i + 1) + ' cleared! +30 XP');
-        if (cleared.size === 3) achieve('quest', 'Quest Master (all quests cleared)');
-      });
     });
 
     // ---------- filters ----------
@@ -272,73 +220,44 @@
     });
 
     // ---------- copy email ----------
-    const copy = $('copy');
+    const copy = document.getElementById('copy'), toast = document.getElementById('toast');
     copy.onclick = () => {
       navigator.clipboard.writeText(copy.dataset.email);
-      copy.textContent = '✅ Copied!';
-      setTimeout(() => copy.textContent = '📋 Copy email', 1800);
-      achieve('friend', 'Networker (copied email)');
+      toast.textContent = '✅ Email copied to clipboard';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1800);
     };
 
-    // ---------- day/night ----------
-    const themeBtn = $('theme');
-    themeBtn.onclick = () => {
-      const night = document.body.classList.toggle('night');
-      themeBtn.textContent = night ? '☀️' : '🌙';
-    };
-
-    // ---------- hero bell ----------
-    const bellBtn = $('bellBtn');
-    bellBtn.onclick = () => {
-      bellBtn.classList.remove('ring'); void bellBtn.offsetWidth; bellBtn.classList.add('ring');
-      say('🔔 Ting ting! +5 XP'); addXP(5);
-      achieve('bell', 'First Ring (clicked the bell)');
-    };
-
-    // ---------- bell hunt mini game ----------
-    const field = $('field');
-    function spawnBell() {
-      const b = document.createElement('button');
-      b.className = 'fbell'; b.textContent = '🔔'; b.setAttribute('aria-label', 'Collect bell');
-      b.style.left = (5 + Math.random() * 88) + 'vw';
-      b.style.top = (15 + Math.random() * 70) + 'vh';
-      b.style.animationDelay = (-Math.random() * 3) + 's';
-      b.onclick = () => {
-        b.classList.add('pop'); setTimeout(() => b.remove(), 250);
-        if (coins < 10) {
-          coins++; addXP(8); render();
-          if (coins === 10) {
-            achieve('collector', 'Bell Collector (10 bells)');
-            say('🎉 SECRET: Thanks for playing! Hire me 😄');
-          }
+    // ---------- starfield ----------
+    const cv = document.getElementById('space'), ctx = cv.getContext('2d');
+    let stars = [], mx = 0, my = 0;
+    function init() {
+      cv.width = innerWidth; cv.height = innerHeight;
+      stars = Array.from({ length: Math.min(220, Math.floor(innerWidth / 6)) }, () => ({
+        x: Math.random() * cv.width, y: Math.random() * cv.height,
+        z: Math.random() * 2 + 0.3, tw: Math.random() * 6
+      }));
+    }
+    addEventListener('resize', init); init();
+    addEventListener('mousemove', e => { mx = (e.clientX / innerWidth - .5); my = (e.clientY / innerHeight - .5); });
+    (function draw(t) {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      speedBoost *= 0.92;
+      stars.forEach(s => {
+        s.y += s.z * 0.25 + speedBoost * s.z * 0.3;
+        if (s.y > cv.height) { s.y = -5; s.x = Math.random() * cv.width; }
+        const px = s.x - mx * 30 * s.z, py = s.y - my * 30 * s.z;
+        const a = 0.45 + 0.5 * Math.sin(t / 700 + s.tw);
+        ctx.fillStyle = `rgba(190,220,255,${a})`;
+        if (speedBoost > 1.5) {
+          ctx.strokeStyle = `rgba(150,200,255,${a * .6})`;
+          ctx.lineWidth = s.z * .8;
+          ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px, py - speedBoost * 3 * s.z); ctx.stroke();
         }
-      };
-      field.appendChild(b);
-      setTimeout(() => b.parentNode && b.remove(), 7000);
-    }
-    setInterval(() => { if (coins < 10 && field.children.length < 4) spawnBell(); }, 2600);
-    setTimeout(spawnBell, 1200);
-
-    // ---------- floating gadgets ----------
-    const icons = ['🚁', '🥞', '🚪', '⭐', '☁️'];
-    for (let i = 0; i < 12; i++) {
-      const s = document.createElement('span');
-      s.className = 'gad'; s.textContent = icons[i % icons.length];
-      s.style.left = Math.random() * 100 + 'vw';
-      s.style.fontSize = (18 + Math.random() * 20) + 'px';
-      s.style.animationDuration = (16 + Math.random() * 16) + 's';
-      s.style.animationDelay = (-Math.random() * 20) + 's';
-      field.appendChild(s);
-    }
-
-    // ---------- konami-style cheat ----------
-    const code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown']; let pos = 0;
-    addEventListener('keydown', e => {
-      pos = (e.key === code[pos]) ? pos + 1 : 0;
-      if (pos === code.length) { pos = 0; addXP(100); achieve('cheat', 'Secret Cheat Code'); say('✨ Cheat activated! +100 XP'); }
-    });
-
-    render();
+        ctx.beginPath(); ctx.arc(px, py, s.z * 0.9, 0, 7); ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    })(0);
   </script>
 </body>
 </html>
