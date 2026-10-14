@@ -7,10 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="bg"></canvas>
   <div class="glow" id="glow"></div>
-  <div class="blob b1"></div>
-  <div class="blob b2"></div>
-  <div class="blob b3"></div>
   <div class="progress" id="progress"></div>
 
   <nav>
@@ -20,6 +18,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
 
@@ -33,9 +32,9 @@
       <a class="btn ghost" href="#contact">Contact me</a>
     </div>
     <div class="socials">
-      <a href="https://github.com/Jerin101" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank">LinkedIn</a>
-      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank">HackerRank</a>
+      <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank" rel="noopener noreferrer">HackerRank</a>
     </div>
   </header>
 
@@ -50,47 +49,55 @@
       <div class="stats">
         <div><b data-count="3">0</b><span>Projects</span></div>
         <div><b data-count="5">0</b><span>Languages</span></div>
-        <div><b data-count="4">4</b><span>Year Student</span></div>
+        <div><b data-count="4">0</b><span>Year Student</span></div>
       </div>
     </div>
   </section>
 
   <section id="skills" class="reveal">
     <h3>Skills</h3>
+    <div class="bars">
+      <div class="bar"><label>Python</label><div class="track"><i data-w="85"></i></div></div>
+      <div class="bar"><label>Java</label><div class="track"><i data-w="70"></i></div></div>
+      <div class="bar"><label>HTML / CSS</label><div class="track"><i data-w="80"></i></div></div>
+      <div class="bar"><label>PHP</label><div class="track"><i data-w="65"></i></div></div>
+      <div class="bar"><label>Data Analytics</label><div class="track"><i data-w="75"></i></div></div>
+    </div>
     <div class="chips">
-      <span>🐍 Python</span>
-      <span>☕ Java</span>
-      <span>🌐 HTML</span>
-      <span>🎨 CSS</span>
-      <span>🐘 PHP</span>
-      <span>📊 Data Analytics</span>
       <span>🎓 Coursera Courses</span>
+      <span>📊 Data Science</span>
+      <span>🧠 Machine Learning</span>
     </div>
   </section>
 
   <section id="projects" class="reveal">
     <h3>Projects</h3>
+    <div class="filters">
+      <button class="active" data-f="all">All</button>
+      <button data-f="data">Data</button>
+      <button data-f="web">Web</button>
+      <button data-f="ai">AI</button>
+    </div>
     <div class="grid">
-      <div class="card tilt">
+      <div class="card tilt" data-cat="data">
         <div class="icon">🦟</div>
         <h4>Dengue Analysis in Bangladesh</h4>
         <p>Data analytics project exploring division-wise dengue trends in Bangladesh.</p>
         <div class="tags"><span>Python</span><span>Data Analytics</span></div>
-        <a href="https://github.com/Jerin101" target="_blank">View on GitHub →</a>
+        <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
       </div>
-      <div class="card tilt">
+      <div class="card tilt" data-cat="ai">
         <div class="icon">👗</div>
         <h4>AI Fit Studio</h4>
-        <p>AI-powered virtual try-on application for clothing.</p>
+        <p>Virtual try-on application for clothing.</p>
         <div class="tags"><span>AI</span><span>Python</span></div>
-        <a href="https://github.com/Jerin101" target="_blank">View on GitHub →</a>
       </div>
-      <div class="card tilt">
+      <div class="card tilt" data-cat="web">
         <div class="icon">📚</div>
         <h4>Library Management System</h4>
         <p>Web-based library system built with HTML, CSS and PHP.</p>
         <div class="tags"><span>HTML</span><span>CSS</span><span>PHP</span></div>
-        <a href="https://github.com/Jerin101" target="_blank">View on GitHub →</a>
+        <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
       </div>
     </div>
   </section>
@@ -100,20 +107,22 @@
     <p class="center">Open for internships, projects and collaboration.</p>
     <div class="contact-links">
       <a href="mailto:YOUR-EMAIL@gmail.com">✉️ Email</a>
-      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank">💼 LinkedIn</a>
-      <a href="https://github.com/Jerin101" target="_blank">💻 GitHub</a>
-      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank">🏆 HackerRank</a>
+      <button id="copy" data-email="YOUR-EMAIL@gmail.com">📋 Copy email</button>
+      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+      <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank" rel="noopener noreferrer">🏆 HackerRank</a>
     </div>
   </section>
 
   <footer>© 2026 Israt Jerin Nafisa</footer>
+  <button id="top" aria-label="Back to top">↑</button>
 
   <script>
     // Typing effect
-    const words = ["Software Engineering Student", "Data Science Enthusiast", "AI Project Builder"];
+    const words = ["Software Engineering Student", "Data Science Enthusiast", "Problem Solver"];
     let w = 0, c = 0, del = false;
     const el = document.getElementById('typing');
-    function type() {
+    (function type() {
       const word = words[w];
       el.textContent = word.substring(0, c);
       if (!del && c < word.length) c++;
@@ -121,8 +130,7 @@
       else if (!del && c === word.length) { del = true; return setTimeout(type, 1200); }
       else { del = false; w = (w + 1) % words.length; }
       setTimeout(type, del ? 40 : 80);
-    }
-    type();
+    })();
 
     // Cursor glow
     const glow = document.getElementById('glow');
@@ -131,14 +139,17 @@
       glow.style.top = e.clientY + 'px';
     });
 
-    // Scroll progress bar
+    // Progress bar + back to top
     const bar = document.getElementById('progress');
+    const topBtn = document.getElementById('top');
     window.addEventListener('scroll', () => {
       const h = document.documentElement;
       bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+      topBtn.classList.toggle('show', h.scrollTop > 400);
     });
+    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Reveal on scroll + counters
+    // Reveal + counters + skill bars
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (!e.isIntersecting) return;
@@ -147,20 +158,16 @@
           const t = +n.dataset.count; let i = 0;
           const id = setInterval(() => { n.textContent = ++i; if (i >= t) clearInterval(id); }, 250);
         });
+        e.target.querySelectorAll('[data-w]').forEach(b => b.style.width = b.dataset.w + '%');
+        io.unobserve(e.target);
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(x => io.observe(x));
 
-    // 3D tilt cards
+    // 3D tilt
     document.querySelectorAll('.tilt').forEach(card => {
       card.addEventListener('mousemove', e => {
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateY(-6px)`;
-      });
-      card.addEventListener('mouseleave', () => card.style.transform = '');
-    });
-  </script>
-</body>
-</html>
+        card.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y *
