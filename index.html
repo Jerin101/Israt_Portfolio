@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="glow" id="glow"></div>
   <div class="blob b1"></div>
   <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="progress" id="progress"></div>
 
   <nav>
-    <span class="logo">IJN.</span>
-    <div>
+    <span class="logo">IJN<span>.</span></span>
+    <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -21,72 +24,143 @@
   </nav>
 
   <header class="hero">
-    <p class="hi">Hello, I'm</p>
+    <p class="hi">👋 Hello, I'm</p>
     <h1>Israt Jerin Nafisa</h1>
-    <h2>Software Engineering Student · Data Science Major</h2>
-    <a class="btn" href="#projects">See my work</a>
+    <h2><span id="typing"></span><span class="cursor">|</span></h2>
+    <p class="sub">4th year Software Engineering @ Daffodil International University</p>
+    <div class="cta">
+      <a class="btn" href="#projects">See my work</a>
+      <a class="btn ghost" href="#contact">Contact me</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/Jerin101" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank">LinkedIn</a>
+      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank">HackerRank</a>
+    </div>
   </header>
 
   <section id="about" class="reveal">
-    <h3>About</h3>
-    <p>
-      I'm a 4th year Software Engineering student at Daffodil International University,
-      majoring in Data Science. I love turning data into insights and building AI-powered
-      applications. I'm always learning through projects and online courses.
-    </p>
+    <h3>About Me</h3>
+    <div class="about-box">
+      <p>
+        I'm a 4th year Software Engineering student at Daffodil International University,
+        majoring in <b>Data Science</b>. I love turning data into insights and building
+        AI-powered applications. I keep learning through projects and online courses.
+      </p>
+      <div class="stats">
+        <div><b data-count="3">0</b><span>Projects</span></div>
+        <div><b data-count="5">0</b><span>Languages</span></div>
+        <div><b data-count="4">4</b><span>Year Student</span></div>
+      </div>
+    </div>
   </section>
 
   <section id="skills" class="reveal">
     <h3>Skills</h3>
     <div class="chips">
-      <span>Python</span>
-      <span>Java</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>PHP</span>
-      <span>Data Analytics</span>
-      <span>Coursera Certified Courses</span>
+      <span>🐍 Python</span>
+      <span>☕ Java</span>
+      <span>🌐 HTML</span>
+      <span>🎨 CSS</span>
+      <span>🐘 PHP</span>
+      <span>📊 Data Analytics</span>
+      <span>🎓 Coursera Courses</span>
     </div>
   </section>
 
   <section id="projects" class="reveal">
     <h3>Projects</h3>
     <div class="grid">
-      <div class="card">
+      <div class="card tilt">
+        <div class="icon">🦟</div>
         <h4>Dengue Analysis in Bangladesh</h4>
         <p>Data analytics project exploring division-wise dengue trends in Bangladesh.</p>
-        <a href="https://github.com/Jerin101/REPO-NAME" target="_blank">View on GitHub →</a>
+        <div class="tags"><span>Python</span><span>Data Analytics</span></div>
+        <a href="https://github.com/Jerin101" target="_blank">View on GitHub →</a>
       </div>
-      <div class="card">
+      <div class="card tilt">
+        <div class="icon">👗</div>
         <h4>AI Fit Studio</h4>
         <p>AI-powered virtual try-on application for clothing.</p>
-        <a href="https://github.com/Jerin101/REPO-NAME" target="_blank">View on GitHub →</a>
+        <div class="tags"><span>AI</span><span>Python</span></div>
+        <a href="https://github.com/Jerin101" target="_blank">View on GitHub →</a>
       </div>
-      <div class="card">
+      <div class="card tilt">
+        <div class="icon">📚</div>
         <h4>Library Management System</h4>
         <p>Web-based library system built with HTML, CSS and PHP.</p>
-        <a href="https://github.com/Jerin101/REPO-NAME" target="_blank">View on GitHub →</a>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>PHP</span></div>
+        <a href="https://github.com/Jerin101" target="_blank">View on GitHub →</a>
       </div>
     </div>
   </section>
 
   <section id="contact" class="reveal">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:YOUR-EMAIL@gmail.com">YOUR-EMAIL@gmail.com</a></p>
-    <p>
-      <a href="https://github.com/Jerin101" target="_blank">GitHub</a> ·
-      <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
-    </p>
+    <h3>Let's Connect</h3>
+    <p class="center">Open for internships, projects and collaboration.</p>
+    <div class="contact-links">
+      <a href="mailto:YOUR-EMAIL@gmail.com">✉️ Email</a>
+      <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/Jerin101" target="_blank">💻 GitHub</a>
+      <a href="https://www.hackerrank.com/profile/nafijerin455" target="_blank">🏆 HackerRank</a>
+    </div>
   </section>
 
   <footer>© 2026 Israt Jerin Nafisa</footer>
 
   <script>
-    const els = document.querySelectorAll('.reveal');
+    // Typing effect
+    const words = ["Software Engineering Student", "Data Science Enthusiast", "AI Project Builder"];
+    let w = 0, c = 0, del = false;
+    const el = document.getElementById('typing');
+    function type() {
+      const word = words[w];
+      el.textContent = word.substring(0, c);
+      if (!del && c < word.length) c++;
+      else if (del && c > 0) c--;
+      else if (!del && c === word.length) { del = true; return setTimeout(type, 1200); }
+      else { del = false; w = (w + 1) % words.length; }
+      setTimeout(type, del ? 40 : 80);
+    }
+    type();
+
+    // Cursor glow
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    // Scroll progress bar
+    const bar = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+    });
+
+    // Reveal on scroll + counters
     const io = new IntersectionObserver(es => {
-      es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('show');
+        e.target.querySelectorAll('[data-count]').forEach(n => {
+          const t = +n.dataset.count; let i = 0;
+          const id = setInterval(() => { n.textContent = ++i; if (i >= t) clearInterval(id); }, 250);
+        });
+      });
     }, { threshold: 0.15 });
-    els.forEach(el => io.observe(el));
+    document.querySelectorAll('.reveal').forEach(x => io.observe(x));
+
+    // 3D tilt cards
+    document.querySelectorAll('.tilt').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(700px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => card.style.transform = '');
+    });
   </script>
 </body>
 </html>
