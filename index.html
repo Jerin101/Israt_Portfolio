@@ -14,17 +14,25 @@
     <div class="cloud c3"></div>
     <div class="cloud c4"></div>
   </div>
-  <div id="gadgets"></div>
+  <div id="field"></div>
   <div class="progress" id="progress"></div>
-  <div class="toast" id="toast">🔔 Ting ting!</div>
+  <div class="toast" id="toast"></div>
+
+  <!-- GAME HUD -->
+  <div class="hud">
+    <div class="hud-item"><span>LV</span><b id="lvl">1</b></div>
+    <div class="xp"><i id="xpBar"></i><small id="xpText">0 / 100 XP</small></div>
+    <div class="hud-item">🔔 <b id="coins">0</b>/10</div>
+    <div class="hud-item">🏆 <b id="ach">0</b>/6</div>
+  </div>
 
   <nav>
     <span class="logo"><span class="mini-bell"></span>IJN</span>
     <div class="links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certificates">Certificates</a>
+      <a href="#about">Player</a>
+      <a href="#skills">Stats</a>
+      <a href="#projects">Quests</a>
+      <a href="#certificates">Badges</a>
       <a href="#contact">Contact</a>
       <button id="theme" aria-label="Toggle day and night">🌙</button>
     </div>
@@ -34,14 +42,15 @@
     <div class="collar" id="bellBtn" title="Click me!">
       <span class="bell"></span>
     </div>
-    <p class="hi">👋 Hello, I'm</p>
+    <p class="hi">🎮 PLAYER ONE</p>
     <h1>Israt Jerin Nafisa</h1>
     <h2><span id="typing"></span><span class="cursor">|</span></h2>
     <p class="sub">4th year Software Engineering @ Daffodil International University</p>
     <div class="cta">
-      <a class="btn" href="#projects">See my work</a>
+      <a class="btn" href="#projects">▶ Start Quests</a>
       <a class="btn ghost" href="#contact">Contact me</a>
     </div>
+    <p class="hint">💡 Tip: floating 🔔 bells collect kor. 10 ta pele secret unlock hobe!</p>
     <div class="socials">
       <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/israt-7939a4346" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -49,8 +58,8 @@
     </div>
   </header>
 
-  <section id="about" class="reveal">
-    <h3>About Me</h3>
+  <section id="about" class="reveal" data-xp="20">
+    <h3>Player Profile</h3>
     <div class="about-box">
       <p>
         I'm a 4th year Software Engineering student at Daffodil International University,
@@ -58,15 +67,15 @@
         AI-powered applications. I keep learning through projects and online courses.
       </p>
       <div class="stats">
-        <div><b data-count="3">0</b><span>Projects</span></div>
+        <div><b data-count="3">0</b><span>Quests</span></div>
         <div><b data-count="5">0</b><span>Languages</span></div>
-        <div><b data-count="4">0</b><span>Year Student</span></div>
+        <div><b data-count="2">0</b><span>Badges</span></div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="reveal">
-    <h3>Skills</h3>
+  <section id="skills" class="reveal" data-xp="20">
+    <h3>Character Stats</h3>
     <div class="bars">
       <div class="bar"><label>🐍 Python</label><div class="track"><i data-w="85"></i></div></div>
       <div class="bar"><label>☕ Java</label><div class="track"><i data-w="70"></i></div></div>
@@ -75,14 +84,14 @@
       <div class="bar"><label>📊 Data Analytics</label><div class="track"><i data-w="75"></i></div></div>
     </div>
     <div class="chips">
-      <span>🎓 Coursera Courses</span>
-      <span>📊 Data Science</span>
-      <span>🧠 Machine Learning</span>
+      <span>🚁 Propeller Hat: Fast Learner</span>
+      <span>🚪 Magic Door: Data Science</span>
+      <span>🧠 Brain Gadget: Machine Learning</span>
     </div>
   </section>
 
-  <section id="projects" class="reveal">
-    <h3>Projects</h3>
+  <section id="projects" class="reveal" data-xp="20">
+    <h3>Quests</h3>
     <div class="filters">
       <button class="active" data-f="all">All</button>
       <button data-f="data">Data</button>
@@ -90,52 +99,60 @@
       <button data-f="ai">AI</button>
     </div>
     <div class="grid">
-      <div class="card tilt" data-cat="data">
+      <div class="card tilt quest" data-cat="data">
+        <span class="ribbon">QUEST 1</span>
         <div class="icon">🦟</div>
         <h4>Dengue Analysis in Bangladesh</h4>
         <p>Data analytics project exploring division-wise dengue trends in Bangladesh.</p>
         <div class="tags"><span>Python</span><span>Data Analytics</span></div>
         <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        <div class="clear">✔ QUEST CLEARED +30 XP</div>
       </div>
-      <div class="card tilt" data-cat="ai">
+      <div class="card tilt quest" data-cat="ai">
+        <span class="ribbon">QUEST 2</span>
         <div class="icon">👗</div>
         <h4>AI Fit Studio</h4>
         <p>Virtual try-on application for clothing.</p>
         <div class="tags"><span>AI</span><span>Python</span></div>
+        <div class="clear">✔ QUEST CLEARED +30 XP</div>
       </div>
-      <div class="card tilt" data-cat="web">
+      <div class="card tilt quest" data-cat="web">
+        <span class="ribbon">QUEST 3</span>
         <div class="icon">📚</div>
         <h4>Library Management System</h4>
         <p>Web-based library system built with HTML, CSS and PHP.</p>
         <div class="tags"><span>HTML</span><span>CSS</span><span>PHP</span></div>
         <a href="https://github.com/Jerin101" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        <div class="clear">✔ QUEST CLEARED +30 XP</div>
       </div>
     </div>
   </section>
 
-  <section id="certificates" class="reveal">
-    <h3>Certificates</h3>
+  <section id="certificates" class="reveal" data-xp="20">
+    <h3>Badges Earned</h3>
     <div class="grid">
       <div class="card tilt">
+        <span class="ribbon gold">BADGE</span>
         <div class="icon">🎓</div>
-        <h4>Coursera Certificate 1</h4>
-        <p>Course name ekhane likhbi.</p>
-        <div class="tags"><span>Coursera</span></div>
+        <h4>AI Fundamentals</h4>
+        <p>Coursera course certificate.</p>
+        <div class="tags"><span>Coursera</span><span>AI</span></div>
         <a href="https://www.coursera.org/account/accomplishments/verify/WC6JXXJ4BHVJ" target="_blank" rel="noopener noreferrer">Verify certificate →</a>
         <a class="second" href="https://www.coursera.org/api/certificate.v1/pdf/WC6JXXJ4BHVJ" target="_blank" rel="noopener noreferrer">Download PDF ↓</a>
       </div>
       <div class="card tilt">
-        <div class="icon">🎓</div>
-        <h4>Coursera Certificate 2</h4>
-        <p>Course name ekhane likhbi.</p>
-        <div class="tags"><span>Coursera</span></div>
+        <span class="ribbon gold">BADGE</span>
+        <div class="icon">💡</div>
+        <h4>AI for Brainstorming</h4>
+        <p>Coursera course certificate.</p>
+        <div class="tags"><span>Coursera</span><span>AI</span></div>
         <a href="https://www.coursera.org/account/accomplishments/verify/7E4432NROUWP" target="_blank" rel="noopener noreferrer">Verify certificate →</a>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="reveal">
-    <h3>Let's Connect</h3>
+  <section id="contact" class="reveal" data-xp="20">
+    <h3>Final Level: Let's Connect</h3>
     <p class="center">Open for internships, projects and collaboration.</p>
     <div class="contact-links">
       <a href="mailto:nafijerin455@gmail.com">✉️ Email</a>
@@ -146,11 +163,11 @@
     </div>
   </section>
 
-  <footer>© 2026 Israt Jerin Nafisa</footer>
+  <footer>© 2026 Israt Jerin Nafisa · GAME OVER? Press ↑ ↑ ↓ ↓ 😉</footer>
   <button id="top" aria-label="Back to top">🚁</button>
 
   <script>
-    // Typing effect
+    // ---------- typing ----------
     const words = ["Software Engineering Student", "Data Science Enthusiast", "Problem Solver"];
     let w = 0, c = 0, del = false;
     const el = document.getElementById('typing');
@@ -164,17 +181,44 @@
       setTimeout(type, del ? 40 : 80);
     })();
 
-    // Progress bar + back to top
-    const bar = document.getElementById('progress');
-    const topBtn = document.getElementById('top');
-    window.addEventListener('scroll', () => {
+    // ---------- game state ----------
+    let xp = 0, level = 1, coins = 0, unlocked = new Set();
+    const need = () => level * 100;
+    const $ = id => document.getElementById(id);
+    const toast = $('toast');
+    let tt;
+    function say(msg) {
+      toast.textContent = msg; toast.classList.add('show');
+      clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 1900);
+    }
+    function render() {
+      $('lvl').textContent = level;
+      $('coins').textContent = coins;
+      $('ach').textContent = unlocked.size;
+      $('xpBar').style.width = Math.min(100, xp / need() * 100) + '%';
+      $('xpText').textContent = xp + ' / ' + need() + ' XP';
+    }
+    function addXP(n) {
+      xp += n;
+      while (xp >= need()) { xp -= need(); level++; say('⭐ LEVEL UP! Level ' + level); }
+      render();
+    }
+    function achieve(key, text) {
+      if (unlocked.has(key)) return;
+      unlocked.add(key); render();
+      say('🏆 Achievement: ' + text); addXP(25);
+    }
+
+    // ---------- scroll: progress, back to top, XP per section ----------
+    const bar = $('progress'), topBtn = $('top');
+    addEventListener('scroll', () => {
       const h = document.documentElement;
       bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
       topBtn.classList.toggle('show', h.scrollTop > 400);
     });
-    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    topBtn.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Reveal + counters + skill bars
+    const seen = new Set();
     const io = new IntersectionObserver(es => {
       es.forEach(e => {
         if (!e.isIntersecting) return;
@@ -184,12 +228,16 @@
           const id = setInterval(() => { n.textContent = ++i; if (i >= t) clearInterval(id); }, 250);
         });
         e.target.querySelectorAll('[data-w]').forEach(b => b.style.width = b.dataset.w + '%');
+        if (e.target.dataset.xp && !seen.has(e.target.id)) {
+          seen.add(e.target.id); addXP(+e.target.dataset.xp);
+          if (seen.size === 5) achieve('explorer', 'Explorer (visited all sections)');
+        }
         io.unobserve(e.target);
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.2 });
     document.querySelectorAll('.reveal').forEach(x => io.observe(x));
 
-    // 3D tilt
+    // ---------- tilt ----------
     document.querySelectorAll('.tilt').forEach(card => {
       card.addEventListener('mousemove', e => {
         const r = card.getBoundingClientRect();
@@ -200,7 +248,19 @@
       card.addEventListener('mouseleave', () => card.style.transform = '');
     });
 
-    // Project filter
+    // ---------- quests ----------
+    const cleared = new Set();
+    document.querySelectorAll('.quest').forEach((q, i) => {
+      q.addEventListener('click', e => {
+        if (e.target.tagName === 'A') return;
+        if (cleared.has(i)) return;
+        cleared.add(i); q.classList.add('done'); addXP(30);
+        say('🗡️ Quest ' + (i + 1) + ' cleared! +30 XP');
+        if (cleared.size === 3) achieve('quest', 'Quest Master (all quests cleared)');
+      });
+    });
+
+    // ---------- filters ----------
     document.querySelectorAll('.filters button').forEach(btn => {
       btn.onclick = () => {
         document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
@@ -211,42 +271,74 @@
       };
     });
 
-    // Copy email
-    const copy = document.getElementById('copy');
+    // ---------- copy email ----------
+    const copy = $('copy');
     copy.onclick = () => {
       navigator.clipboard.writeText(copy.dataset.email);
       copy.textContent = '✅ Copied!';
       setTimeout(() => copy.textContent = '📋 Copy email', 1800);
+      achieve('friend', 'Networker (copied email)');
     };
 
-    // Day / Night toggle
-    const themeBtn = document.getElementById('theme');
+    // ---------- day/night ----------
+    const themeBtn = $('theme');
     themeBtn.onclick = () => {
       const night = document.body.classList.toggle('night');
       themeBtn.textContent = night ? '☀️' : '🌙';
     };
 
-    // Bell click
-    const toast = document.getElementById('toast');
-    const bellBtn = document.getElementById('bellBtn');
+    // ---------- hero bell ----------
+    const bellBtn = $('bellBtn');
     bellBtn.onclick = () => {
       bellBtn.classList.remove('ring'); void bellBtn.offsetWidth; bellBtn.classList.add('ring');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 1400);
+      say('🔔 Ting ting! +5 XP'); addXP(5);
+      achieve('bell', 'First Ring (clicked the bell)');
     };
 
-    // Floating gadgets
-    const icons = ['🚁', '🥞', '🚪', '🔔', '⭐', '☁️'];
-    const box = document.getElementById('gadgets');
-    for (let i = 0; i < 14; i++) {
-      const s = document.createElement('span');
-      s.textContent = icons[i % icons.length];
-      s.style.left = Math.random() * 100 + 'vw';
-      s.style.fontSize = (18 + Math.random() * 22) + 'px';
-      s.style.animationDuration = (14 + Math.random() * 16) + 's';
-      s.style.animationDelay = (-Math.random() * 20) + 's';
-      box.appendChild(s);
+    // ---------- bell hunt mini game ----------
+    const field = $('field');
+    function spawnBell() {
+      const b = document.createElement('button');
+      b.className = 'fbell'; b.textContent = '🔔'; b.setAttribute('aria-label', 'Collect bell');
+      b.style.left = (5 + Math.random() * 88) + 'vw';
+      b.style.top = (15 + Math.random() * 70) + 'vh';
+      b.style.animationDelay = (-Math.random() * 3) + 's';
+      b.onclick = () => {
+        b.classList.add('pop'); setTimeout(() => b.remove(), 250);
+        if (coins < 10) {
+          coins++; addXP(8); render();
+          if (coins === 10) {
+            achieve('collector', 'Bell Collector (10 bells)');
+            say('🎉 SECRET: Thanks for playing! Hire me 😄');
+          }
+        }
+      };
+      field.appendChild(b);
+      setTimeout(() => b.parentNode && b.remove(), 7000);
     }
+    setInterval(() => { if (coins < 10 && field.children.length < 4) spawnBell(); }, 2600);
+    setTimeout(spawnBell, 1200);
+
+    // ---------- floating gadgets ----------
+    const icons = ['🚁', '🥞', '🚪', '⭐', '☁️'];
+    for (let i = 0; i < 12; i++) {
+      const s = document.createElement('span');
+      s.className = 'gad'; s.textContent = icons[i % icons.length];
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.fontSize = (18 + Math.random() * 20) + 'px';
+      s.style.animationDuration = (16 + Math.random() * 16) + 's';
+      s.style.animationDelay = (-Math.random() * 20) + 's';
+      field.appendChild(s);
+    }
+
+    // ---------- konami-style cheat ----------
+    const code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown']; let pos = 0;
+    addEventListener('keydown', e => {
+      pos = (e.key === code[pos]) ? pos + 1 : 0;
+      if (pos === code.length) { pos = 0; addXP(100); achieve('cheat', 'Secret Cheat Code'); say('✨ Cheat activated! +100 XP'); }
+    });
+
+    render();
   </script>
 </body>
 </html>
